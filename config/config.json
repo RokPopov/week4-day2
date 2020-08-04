@@ -1,0 +1,21 @@
+{
+  "development": {
+    "dialect": "postgres",
+    "url": "postgres://dgcjcgtp:4M8oV_roI6BEHYc3-SPV7OxBmalwmb1N@rogue.db.elephantsql.com:5432/dgcjcgtp",
+    "operatorsAliases": "0"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
