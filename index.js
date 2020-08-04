@@ -42,6 +42,16 @@ app.post("/echo", (req, res) => {
   res.json(req.body);
 });
 
+app.get("/users/:userId", async (req, res) => {
+  const userId = parseInt(req.params.userId);
+  const user = await User.findByPk(userId);
+  if (!user) {
+    res.status(404).send("User not found!");
+  } else {
+    res.send(user);
+  }
+});
+
 app.post("/users", async (req, res, next) => {
   try {
     const email = req.body.email;
