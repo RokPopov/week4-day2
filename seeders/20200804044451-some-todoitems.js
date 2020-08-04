@@ -6,12 +6,14 @@ module.exports = {
       {
         task: "Training",
         deadline: "September",
+        todoListId: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
         task: "Buy a new club",
         deadline: "November",
+        todoListId: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
