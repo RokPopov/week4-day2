@@ -14,7 +14,7 @@ module.exports = {
     await queryInterface.addColumn("todoItems", "todoListId", {
       type: Sequelize.INTEGER,
       references: {
-        model: "todoItems",
+        model: "todoLists",
         key: "id",
       },
       onUpdate: "CASCADE",
