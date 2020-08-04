@@ -35,6 +35,7 @@ const app = express();
 const PORT = 4000;
 
 const User = require("./models").user;
+const TodoList = require("./models").todoList;
 
 app.use(express.json());
 
@@ -60,6 +61,21 @@ app.post("/users", async (req, res, next) => {
     } else {
       const user = await User.create(req.body);
       res.json(user);
+    }
+  } catch (e) {
+    next(e);
+  }
+});
+
+app.put("/users/:userId", async (req, res, next) => {
+  try {
+    const userId = parseInt(req.params.userId);
+    const userToUpdate = await User.findByPk(userId);
+    if (!userToUpdate) {
+      res.status(404).send("User not found");
+    } else {
+      const updatedUser = await userToUpdate.update(req.body);
+      res.json(updatedUser);
     }
   } catch (e) {
     next(e);
